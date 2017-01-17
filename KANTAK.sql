@@ -43,7 +43,6 @@ CREATE TABLE Kantak.Artistak (
 	ID_artista integer IDENTITY PRIMARY KEY,
 	Izena varchar(30),
 	Abizenak varchar(60),
-	Emaila varchar(60),
 	Jaiotza date,
 	Heriotza date,
 	id_erabiltzailea integer FOREIGN KEY REFERENCES Kantak.Erabiltzaileak(id_erabiltzailea)
@@ -75,20 +74,36 @@ CREATE TABLE Kantak.ParteHartzeak (
 	id_erabiltzailea integer FOREIGN KEY REFERENCES Kantak.Erabiltzaileak(id_erabiltzailea)
 	)
 
-	/*
-	ID_erabiltzailea integer IDENTITY PRIMARY KEY,
-	Erabiltzailea varchar(20),
-	Pasahitza varchar(20),
-	Izena varchar(30),Abizenak varchar(60), emaila varchar(60), telefonoa varchar(20), egoera integer */
-
-INSERT INTO Kantak.Erabiltzaileak VALUES ('Olentzero','MariDomingi','Tartalo', 'Barandiarena', 'tartalo@euskaldunak.eus','', 1);
+INSERT INTO Kantak.Erabiltzaileak VALUES ('Olentzero','MariDomingi','Tartalo', 'Barandiarena', 'tartalo@euskaldunak.eus','666777888', 1);
 GO
 
-Insert into Kantak.Generoa values ('Kalejira',1);
-Insert into Kantak.Generoa values ('Fandango',1);
-Insert into Kantak.Generoa values ('Arin Arin',1);
-Insert into Kantak.Generoa values ('Rock',1);
-Insert into Kantak.Generoa values ('Herrikoia',1);
-Insert into Kantak.Generoa values ('Instrumentala',1);
+INSERT INTO Kantak.Generoa VALUES ('Kalejira',1);
+INSERT INTO Kantak.Generoa VALUES ('Fandango',1);
+INSERT INTO Kantak.Generoa VALUES ('Arin Arin',1);
+INSERT INTO Kantak.Generoa VALUES ('Rock',1);
+INSERT INTO Kantak.Generoa VALUES ('Herrikoia',1);
+INSERT INTO Kantak.Generoa VALUES ('Instrumentala',1);
+GO
 
-select * from Kantak.Erabiltzaileak
+INSERT INTO KANTAK.Rolak VALUES ('Jolea-Interpretea',1)
+INSERT INTO KANTAK.Rolak VALUES ('Sortzailea',1)
+INSERT INTO KANTAK.Rolak VALUES ('Teknikaria',1)
+INSERT INTO KANTAK.Rolak VALUES ('Idazlea',1)
+INSERT INTO KANTAK.Rolak VALUES ('Musikagilea',1)
+GO
+
+INSERT INTO KANTAK.Artistak VALUES ('Fito','Cabrales','','',1)
+INSERT INTO KANTAK.Artistak VALUES ('Mikel','Urdangarin','','',1)
+INSERT INTO KANTAK.Artistak VALUES ('Roberto','Iniesta','','',1)
+INSERT INTO KANTAK.Artistak VALUES ('Mikel','Laboa','','',1)
+
+
+
+
+SELECT * FROM Kantak.Erabiltzaileak L1
+SELECT * FROM Kantak.Generoa
+SELECT * FROM Kantak.Rolak
+SELECT * FROM Kantak.Artistak
+SELECT * FROM Kantak.Dokumentuak
+SELECT * FROM Kantak.Saioak
+SELECT * FROM Kantak.ParteHartzeak
