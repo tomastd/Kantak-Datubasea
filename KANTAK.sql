@@ -56,11 +56,15 @@ CREATE TABLE Kantak.Dokumentuak (
 	id_erabiltzailea integer FOREIGN KEY REFERENCES Kantak.Erabiltzaileak(id_erabiltzailea)
 	)	 
 
+CREATE TABLE Kantak.Saio_Motak (
+	ID_saio_mota integer identity primary key,
+	Saio_Mota VARCHAR(20),
+	)
+
 CREATE TABLE Kantak.Saioak (
 	ID_saioa integer identity primary key,
 	izenburua varchar(69),
-	letra varchar(1000),
-	id_kategoria integer FOREIGN KEY REFERENCES Kantak.Generoa(id_Generoa),
+	id_saio_mota integer FOREIGN KEY REFERENCES Kantak.Saio_Motak(ID_saio_mota),
 	sortze_data date,
 	id_erabiltzailea integer FOREIGN KEY REFERENCES Kantak.Erabiltzaileak(id_erabiltzailea)
 	)
@@ -103,13 +107,25 @@ INSERT INTO Kantak.Dokumentuak VALUES ('Abestiaren Partitura','Partitura','http:
 INSERT INTO Kantak.Dokumentuak VALUES ('Argazkia','Letra','http://tokirenbat.com/3',1)
 INSERT INTO Kantak.Dokumentuak VALUES ('Abestiaren Partitura','Partitura','http://tokirenbat.com/4',1)
 
+INSERT INTO Kantak.Saio_Motak VALUES ('Kontzertua')
+INSERT INTO Kantak.Saio_Motak VALUES ('Diska')
+INSERT INTO Kantak.Saio_Motak VALUES ('Bideoklipa')
+INSERT INTO Kantak.Saio_Motak VALUES ('Irratsailoa')
+INSERT INTO Kantak.Saio_Motak VALUES ('Telebista saioa')
+INSERT INTO Kantak.Saio_Motak VALUES ('In-fraganti')
+
+INSERT INTO Kantak.Saioak VALUES ('Saioaren Izena',2,'',1)
+INSERT INTO Kantak.Saioak VALUES ('Saioaren Izena',3,'',1)
+INSERT INTO Kantak.Saioak VALUES ('Saioaren Izena',1,'',1)
+INSERT INTO Kantak.Saioak VALUES ('Saioaren Izena',1,'',1)
 
 
 
-SELECT * FROM Kantak.Erabiltzaileak L1
+SELECT * FROM Kantak.Erabiltzaileak
 SELECT * FROM Kantak.Generoa
 SELECT * FROM Kantak.Rolak
 SELECT * FROM Kantak.Artistak
 SELECT * FROM Kantak.Dokumentuak
+SELECT * FROM Kantak.Saio_Motak
 SELECT * FROM Kantak.Saioak
 SELECT * FROM Kantak.ParteHartzeak
