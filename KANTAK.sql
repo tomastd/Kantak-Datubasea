@@ -85,17 +85,23 @@ INSERT INTO Kantak.Generoa VALUES ('Herrikoia',1);
 INSERT INTO Kantak.Generoa VALUES ('Instrumentala',1);
 GO
 
-INSERT INTO KANTAK.Rolak VALUES ('Jolea-Interpretea',1)
-INSERT INTO KANTAK.Rolak VALUES ('Sortzailea',1)
-INSERT INTO KANTAK.Rolak VALUES ('Teknikaria',1)
-INSERT INTO KANTAK.Rolak VALUES ('Idazlea',1)
-INSERT INTO KANTAK.Rolak VALUES ('Musikagilea',1)
+INSERT INTO Kantak.Rolak VALUES ('Jolea-Interpretea',1)
+INSERT INTO Kantak.Rolak VALUES ('Sortzailea',1)
+INSERT INTO Kantak.Rolak VALUES ('Teknikaria',1)
+INSERT INTO Kantak.Rolak VALUES ('Idazlea',1)
+INSERT INTO Kantak.Rolak VALUES ('Musikagilea',1)
 GO
 
-INSERT INTO KANTAK.Artistak VALUES ('Fito','Cabrales','','',1)
-INSERT INTO KANTAK.Artistak VALUES ('Mikel','Urdangarin','','',1)
-INSERT INTO KANTAK.Artistak VALUES ('Roberto','Iniesta','','',1)
-INSERT INTO KANTAK.Artistak VALUES ('Mikel','Laboa','','',1)
+INSERT INTO Kantak.Artistak VALUES ('Fito','Cabrales','','',1)
+INSERT INTO Kantak.Artistak VALUES ('Mikel','Urdangarin','','',1)
+INSERT INTO Kantak.Artistak VALUES ('Roberto','Iniesta','','',1)
+INSERT INTO Kantak.Artistak VALUES ('Mikel','Laboa','','',1)
+GO
+
+INSERT INTO Kantak.Dokumentuak VALUES ('Abestiaren Letra','Letra','http://tokirenbat.com/1',1)
+INSERT INTO Kantak.Dokumentuak VALUES ('Abestiaren Partitura','Partitura','http://tokirenbat.com/2',1)
+INSERT INTO Kantak.Dokumentuak VALUES ('Argazkia','Letra','http://tokirenbat.com/3',1)
+INSERT INTO Kantak.Dokumentuak VALUES ('Abestiaren Partitura','Partitura','http://tokirenbat.com/4',1)
 
 
 
