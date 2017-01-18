@@ -106,6 +106,7 @@ INSERT INTO Kantak.Dokumentuak VALUES ('Abestiaren Letra','Letra','http://tokire
 INSERT INTO Kantak.Dokumentuak VALUES ('Abestiaren Partitura','Partitura','http://tokirenbat.com/2',1)
 INSERT INTO Kantak.Dokumentuak VALUES ('Argazkia','Letra','http://tokirenbat.com/3',1)
 INSERT INTO Kantak.Dokumentuak VALUES ('Abestiaren Partitura','Partitura','http://tokirenbat.com/4',1)
+GO
 
 INSERT INTO Kantak.Saio_Motak VALUES ('Kontzertua')
 INSERT INTO Kantak.Saio_Motak VALUES ('Diska')
@@ -113,12 +114,13 @@ INSERT INTO Kantak.Saio_Motak VALUES ('Bideoklipa')
 INSERT INTO Kantak.Saio_Motak VALUES ('Irratsailoa')
 INSERT INTO Kantak.Saio_Motak VALUES ('Telebista saioa')
 INSERT INTO Kantak.Saio_Motak VALUES ('In-fraganti')
+GO
 
 INSERT INTO Kantak.Saioak VALUES ('Saioaren Izena',2,'',1)
 INSERT INTO Kantak.Saioak VALUES ('Saioaren Izena',3,'',1)
 INSERT INTO Kantak.Saioak VALUES ('Saioaren Izena',1,'',1)
 INSERT INTO Kantak.Saioak VALUES ('Saioaren Izena',1,'',1)
-
+GO
 
 
 SELECT * FROM Kantak.Erabiltzaileak
@@ -129,3 +131,4 @@ SELECT * FROM Kantak.Dokumentuak
 SELECT * FROM Kantak.Saio_Motak
 SELECT * FROM Kantak.Saioak
 SELECT * FROM Kantak.ParteHartzeak
+GO
