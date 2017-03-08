@@ -27,7 +27,7 @@ CREATE TABLE Kantak.Erabiltzaileak (
 	egoera integer
 	)
 
-CREATE TABLE Kantak.Generoa (
+CREATE TABLE Kantak.Generoak (
 	ID_Generoa integer identity primary key,
 	Izena varchar(20),
 	id_jabea integer FOREIGN KEY REFERENCES Kantak.Erabiltzaileak(id_erabiltzailea),
@@ -56,7 +56,7 @@ CREATE TABLE Kantak.Dokumentuak (
 	Izena varchar(20),
 	DokMota Varchar(20),
 	ruta varchar (255),
-	id_jabea integer FOREIGN KEY REFERENCES Kantak.Erabiltzaileak(id_erabiltzailea),
+	id_generoa integer FOREIGN KEY REFERENCES Kantak.Erabiltzaileak(id_erabiltzailea),
 	id_mantentzailea integer FOREIGN KEY REFERENCES Kantak.Erabiltzaileak(id_erabiltzailea)
 	)	 
 
@@ -71,6 +71,7 @@ CREATE TABLE Kantak.Saioak (
 	ID_saioa integer identity primary key,
 	izenburua varchar(69),
 	id_saio_mota integer FOREIGN KEY REFERENCES Kantak.Saio_Motak(ID_saio_mota),
+	id_generoa integer FOREIGN KEY REFERENCES Kantak.Generoak(id_generoa),
 	sortze_data date,
 	id_jabea integer FOREIGN KEY REFERENCES Kantak.Erabiltzaileak(id_erabiltzailea),
 	id_mantentzailea integer FOREIGN KEY REFERENCES Kantak.Erabiltzaileak(id_erabiltzailea)
@@ -88,12 +89,12 @@ CREATE TABLE Kantak.ParteHartzeak (
 INSERT INTO Kantak.Erabiltzaileak VALUES ('Olentzero','MariDomingi','Tartalo', 'Barandiarena', 'tartalo@euskaldunak.eus','666777888', 1);
 GO
 
-INSERT INTO Kantak.Generoa VALUES ('Kalejira',1,1);
-INSERT INTO Kantak.Generoa VALUES ('Fandango',1,1);
-INSERT INTO Kantak.Generoa VALUES ('Arin Arin',1,1);
-INSERT INTO Kantak.Generoa VALUES ('Rock',1,1);
-INSERT INTO Kantak.Generoa VALUES ('Herrikoia',1,1);
-INSERT INTO Kantak.Generoa VALUES ('Instrumentala',1,1);
+INSERT INTO Kantak.Generoak VALUES ('Kalejira',1,1);
+INSERT INTO Kantak.Generoak VALUES ('Fandango',1,1);
+INSERT INTO Kantak.Generoak VALUES ('Arin Arin',1,1);
+INSERT INTO Kantak.Generoak VALUES ('Rock',1,1);
+INSERT INTO Kantak.Generoak VALUES ('Herrikoia',1,1);
+INSERT INTO Kantak.Generoak VALUES ('Instrumentala',1,1);
 GO
 
 INSERT INTO Kantak.Rolak VALUES ('Jolea-Interpretea',1,1)
@@ -123,10 +124,10 @@ INSERT INTO Kantak.Saio_Motak VALUES ('Telebista saioa',1,1)
 INSERT INTO Kantak.Saio_Motak VALUES ('In-fraganti',1,1)
 GO
 
-INSERT INTO Kantak.Saioak VALUES ('Saioaren Izena',2,'',1,1)
-INSERT INTO Kantak.Saioak VALUES ('Saioaren Izena',3,'',1,1)
-INSERT INTO Kantak.Saioak VALUES ('Saioaren Izena',1,'',1,1)
-INSERT INTO Kantak.Saioak VALUES ('Saioaren Izena',1,'',1,1)
+INSERT INTO Kantak.Saioak VALUES ('Saioaren Izena',2,3,'',1,1)
+INSERT INTO Kantak.Saioak VALUES ('Saioaren Izena',3,1,'',1,1)
+INSERT INTO Kantak.Saioak VALUES ('Saioaren Izena',1,2,'',1,1)
+INSERT INTO Kantak.Saioak VALUES ('Saioaren Izena',1,2,'',1,1)
 GO
 
 INSERT INTO Kantak.ParteHartzeak VALUES (1,1,1,1,1)
@@ -134,7 +135,7 @@ GO
 
 
 SELECT * FROM Kantak.Erabiltzaileak
-SELECT * FROM Kantak.Generoa
+SELECT * FROM Kantak.Generoak
 SELECT * FROM Kantak.Rolak
 SELECT * FROM Kantak.Artistak
 SELECT * FROM Kantak.Dokumentuak
